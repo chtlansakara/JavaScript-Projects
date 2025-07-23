@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+      button:hover {
+        background-color: rgb(105, 105, 105);
+      }
+
+      button:active {
+        opacity: 0.8;
+      }
+
+      .app-title {
+        font-size: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .cal-container {
+        background-color: gray;
+        width: 250px;
+        padding: 24px 20px;
+        border-radius: 10px;
+      }
+
+      .numbers-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* width: 150px; */
+        column-gap: 4px;
+        row-gap: 16px;
+
+      }
+
+      .numbers-row {
+        background-color: gray;
+
+      }
+
+      .number-button {
+        width: 100%;
+        background-color: rgb(46, 46, 46);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 4px 4px;
+      }
+
+      .clear-button {
+        background-color: rgb(233, 231, 231);
+        letter-spacing: 1px;
+        line-height: 16px;
+        color: rgb(24, 24, 24);
+        margin-bottom: 16px;
+        border: none;
+        border-radius: 4px;
+        font-size: 15px;
+        padding: 8px 8px;
+        font-weight: 700;
+      }
+
+      .display-container {
+        display: flex;
+        justify-content: start;
+        background-color: white;
+        margin-bottom: 16px;
+        padding: 4px 2px;
+        border-radius: 4px;
+      }
+
+      .display-box {
+        cursor: text;
+        font-size: 16px;
+        min-height: 24px;
+        font-weight: 700;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h5 class="app-title">Calculator</h5>
+
+    <div class="cal-container">
+      <div class="display-container">
+        <div class="display-box">
+
+        </div>
+      </div>
+
+      <div>
+        <button class="clear-button" onclick="
+          clearAll();
+        ">Clear</button>
+      </div>
+
+      <div class="numbers-grid">
+
+        <button class="number-button" onclick="
+          // calculation += 1;
+          // console.log(calculation);
+          press(1);
+        ">1</button>
+
+        <button class="number-button" onclick="
+          press(2);
+        ">2</button>
+
+        <button class="number-button" onclick="
+         press(3);
+        ">3</button>
+
+        <button class="number-button" onclick="
+          press(' + ');
+        ">+</button>
+
+
+
+        <button class="number-button" onclick="
+          press(4);
+        ">4</button>
+
+        <button class="number-button" onclick="
+          press(5);
+        ">5</button>
+
+        <button class="number-button" onclick="
+          press(6);
+        ">6</button>
+
+        <button class="number-button" onclick="
+          press(' - ');
+        ">-</button>
+
+
+
+        <button class="number-button" onclick="
+          press(7);
+        ">7</button>
+
+        <button class="number-button" onclick="
+          press(8);
+        ">8</button>
+
+        <button class="number-button" onclick="
+          press(9);
+        ">9</button>
+
+        <button class="number-button" onclick="
+          press(' * ');
+        ">*</button>
+
+
+
+        <button class="number-button" onclick="
+          press(0);
+        ">0</button>
+
+        <button class="number-button" onclick="
+          press('.');
+        ">.</button>
+
+        <button class="number-button" onclick="
+          press(' / ');        
+        ">/</button>
+
+        <button class="number-button" onclick="
+          calculate();
+        ">=</button>
+
+
+      </div>
+
+
+    </div>
+
+
+    <script>
+      let calculation = '';
+      const displayElement = document.querySelector('.display-box');
+
+      function press(input) {
+        calculation += input;
+        displayElement.innerHTML = calculation;
+        console.log(calculation);
+      }
+
+      function calculate() {
+        calculation = eval(calculation);
+        displayElement.innerHTML = calculation;
+        console.log(calculation);
+      }
+
+      function clearAll() {
+        calculation = '';
+        displayElement.innerHTML = calculation;
+        console.log('Cleared!');
+      }
+
+      document.body.addEventListener('keyup', (event) => {
+        const pressedKey = event.key;
+        console.log(`The key ${pressedKey} was pressed.`);
+
+        //calculate when 'Enter' or '=' keys are pressed
+        if (pressedKey === 'Enter' || pressedKey === '=') {
+          calculate();
+        }
+
+
+        //for number key pressed
+        if (pressedKey === '0') {
+          press(0);
+        }
+        if (pressedKey === '1') {
+          press(1);
+        }
+        if (pressedKey === '2') {
+          press(2);
+        }
+        if (pressedKey === '3') {
+          press(3);
+        }
+        if (pressedKey === '4') {
+          press(4);
+        }
+        if (pressedKey === '5') {
+          press(5);
+        }
+        if (pressedKey === '6') {
+          press(6);
+        }
+        if (pressedKey === '7') {
+          press(7);
+        }
+        if (pressedKey === '8') {
+          press(8);
+        }
+        if (pressedKey === '9') {
+          press(9);
+        }
+        if (pressedKey === '.') {
+          press('.');
+        }
+
+        // for operator key presses
+        if (pressedKey === '+') {
+          press(' + ');
+        }
+        if (pressedKey === '-') {
+          press(' - ');
+        }
+        if (pressedKey === '*') {
+          press(' / ');
+        }
+        if (pressedKey === '/') {
+          press(' / ');
+        }
+
+        //to clear display when 'Delete' key or C was pressed
+        if (pressedKey === 'Delete' || pressedKey === 'c' || pressedKey === 'C') {
+          clearAll();
+        }
+
+
+
+
+
+
+      });
+
+    </script>
+
+  </body>
+
+</html>

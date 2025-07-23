@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Temperature
+    </title>
+    <style>
+      button {
+        font-size: 14px;
+        margin-right: 16px;
+        border: none;
+        padding: 6px 6px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: rgb(241, 241, 241);
+        transition: all 0.14s;
+        letter-spacing: 1px;
+      }
+
+      button:hover {
+        background-color: rgb(145, 145, 145);
+      }
+
+      button:active {
+        opacity: 0.8;
+      }
+
+      input {
+        font-size: 14px;
+        border: none;
+        padding: 6px 6px;
+        border-radius: 5px;
+
+      }
+
+      .app-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 500px;
+      }
+
+      .app-title {
+        font-size: 20px;
+        margin-bottom: 16px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+
+      }
+
+      .temp-box {
+        display: grid;
+        background-color: rgb(180, 163, 180);
+        border-radius: 5px;
+        grid-template-columns: 220px 1fr;
+        padding: 16px 8px;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .display-container {
+        display: flex;
+        justify-content: st;
+        margin-top: 16px;
+        margin-left: 8px;
+      }
+
+      .display-box {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 22px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        background-color: rgb(185, 185, 185);
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: text;
+        opacity: 0;
+      }
+
+      .display-box-show {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="app-container">
+
+      <div class="app-title">Temperature Converter</div>
+
+      <div class="temp-box">
+        <input type="text" class="tempInput" placeholder="Enter temperature to convert">
+        <div class="button-container">
+          <button class="convertToCel">To Celcius</button>
+          <button class="convertToFah">To Fahrenheit</button>
+        </div>
+      </div>
+
+      <div class="display-container">
+        <div class="display-box">Temperature</div>
+      </div>
+
+    </div>
+
+    <script>
+
+
+      const buttonToCel = document.querySelector('.convertToCel');
+      const buttonToFah = document.querySelector('.convertToFah');
+
+
+      buttonToCel.addEventListener('click', () => {
+        const inputTemp = document.querySelector('.tempInput').value;
+        const temp = Number(inputTemp);
+        convertToCelcius(temp);
+      });
+
+      buttonToFah.addEventListener('click', () => {
+        const inputTemp = document.querySelector('.tempInput').value;
+        const temp = Number(inputTemp);
+        convertToFahrenheit(temp);
+      });
+
+      function convertToCelcius(tempF) {
+        const cel = (tempF - 32) * 5 / 9;
+
+        console.log(`It is ${cel} in Celcius. `);
+        display('C', cel.toFixed(2));
+      }
+
+      function convertToFahrenheit(tempC) {
+        const fah = (tempC * 9 / 5) + 32;
+
+        console.log(`It is ${fah} in Fahrenheit. `);
+        display('F', fah.toFixed(2));
+      }
+
+      function display(T, value) {
+        const displayElement = document.querySelector('.display-box');
+        displayElement.innerHTML = `${value} &#176; ${T}`;
+        displayElement.classList.add('display-box-show');
+      }
+
+
+    </script>
+  </body>
+
+</html>
