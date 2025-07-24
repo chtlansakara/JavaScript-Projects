@@ -1,0 +1,123 @@
+.app-container
+{
+  background-color: rgba(190, 165, 118, 0.4);
+  width: 300px;
+  border-radius: 5px;
+  padding: 24px;
+  padding-bottom: 32px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-box
+{
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  margin-bottom: 56px;
+}
+
+select
+{
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-size: 15px;
+  height: 28px;
+  padding-left: 4px;
+
+}
+
+label
+{
+  margin-right: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  height: 32px;
+}
+
+
+/* styles for the button */
+
+
+.button-container
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.flip-button
+{
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(131, 54, 10);
+  color: white;
+  cursor: pointer;
+  transition: all 0.14s;
+}
+
+.button-image
+{
+  width: 25px;
+  margin-left: 8px;
+}
+
+.flip-button:hover
+{
+  background-color: rgb(194, 114, 39);
+}
+
+.flip-button:active
+{
+  opacity: 0.8;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* displaying the results */
+.display-container
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 24px;
+}
+
+.display-box
+{
+  background-color: rgb(41, 41, 41);
+  color: white;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  line-height: 36px;
+  font-size: 18px;
+}
+
+.result-box
+{
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+  line-height: 36px;
+  border-radius: 5px;
+}
+
+.result-box-win
+{
+  background-color: rgb(23, 105, 23);
+  color: white;
+  margin-top: 24px;
+}
+
+.result-box-lose
+{
+  background-color: rgb(196, 147, 119);
+  color: rgb(0, 0, 0);
+  margin-top: 24px;
+}
