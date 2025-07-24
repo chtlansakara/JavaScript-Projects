@@ -1,0 +1,136 @@
+body
+{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container
+{
+  background-color: rgba(118, 176, 190, 0.4);
+  width: 500px;
+  border-radius: 5px;
+  padding: 24px;
+}
+
+.title
+{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.info
+{
+  font-size: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 16px;
+}
+
+.input-box
+{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-bottom: 16px;
+}
+
+input
+{
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  height: 32px;
+}
+
+label
+{
+  margin-right: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  height: 32px;
+}
+
+.button-container
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.checkbox-container
+{
+  display: flex;
+
+  align-items: center;
+}
+
+.checkbox-label
+{
+  margin: 0;
+  height: auto;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.calculate-button
+{
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(10, 66, 131);
+  color: white;
+  cursor: pointer;
+  transition: all 0.14s;
+}
+
+.calculate-button:hover
+{
+  background-color: rgb(14, 85, 165);
+}
+
+.calculate-button:active
+{
+  opacity: 0.8;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.display-container
+{
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.display-box
+{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  background-color: rgba(8, 8, 8, 0.9);
+  min-height: 20px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: text;
+  /* opacity: 0; */
+}
+
+.discount-text
+{
+  color: rgb(22, 155, 73);
+  opacity: 0;
+  height: 0;
+}
+
+.discount-text-show
+{
+  opacity: 1;
+  height: 30px;
+}
+
+.price
+{
+  font-size: 24px;
+}

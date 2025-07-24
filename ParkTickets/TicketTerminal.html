@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets Terminal</title>
+    <link rel="stylesheet" href="TicketTerminal.css">
+
+  </head>
+
+  <body>
+
+    <div class="app-container">
+      <div class="title">Ticket Terminal</div>
+
+
+
+
+      <div class="input-box">
+        <label for="name">Name: </label>
+        <input type="text" id="name" class="js-input-name">
+      </div>
+
+      <div class="input-box">
+        <label for="age">Age:</label>
+        <input type="text" id="age" class="js-input-age">
+      </div>
+
+      <div class="button-container">
+        <div class="checkbox-container">
+          <label class="checkbox-label" for="isHoliday">Mark if it's a holiday: </label>
+          <input type="checkbox" id="isHoliday" class="js-noHoliday-checkbox">
+        </div>
+
+        <button class="calculate-button js-calculate-button">
+          Calculate
+        </button>
+
+      </div>
+
+      <div class="info">
+        For children (6 years or below) & seniors (65 years or up) 20% discount is applied.
+        <br>
+        *Discounts are not applied for holidays
+      </div>
+
+
+      <div class="display-container">
+        <div class="display-box">
+          <div class="discount-text js-discount-text"></div>
+          <div class="price js-price"></div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <script src="TicketTerminal.js"></script>
+  </body>
+
+</html>
