@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distance Conversion App</title>
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="ConvertDistance.css">
+  </head>
+
+  <body>
+    <div class="app-container">
+
+      <div class="app-title">Distance Converter</div>
+
+      <div class="input-container">
+        <input type="text" class="js-text-input" placeholder="Enter distance to convert">
+
+        <div class="input-box">
+          <label for="fromUnit">From:</label>
+          <select name="from-unit" id="fromUnit">
+            <option value="miles" selected>miles</option>
+            <option value="km">km</option>
+            <option value="ft">feet</option>
+          </select>
+        </div>
+        <div class="input-box">
+          <label for="toUnit">Convert to:</label>
+          <select name="to-unit" id="toUnit">
+            <option value="km" selected>km</option>
+            <option value="miles">miles</option>
+            <option value="ft">feet</option>
+          </select>
+        </div>
+
+        <div class="button-container">
+
+          <button class="convert-button" onclick="
+            convert();
+            ">Convert</button>
+        </div>
+      </div>
+
+      <div class="display-container">
+        <div class="display-box js-display-box"></div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- JavaScript -->
+    <script src="ConvertDistance.js"></script>
+  </body>
+
+</html>
