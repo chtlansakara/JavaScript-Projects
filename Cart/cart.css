@@ -1,0 +1,87 @@
+body
+{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container
+{
+  background-color: rgba(118, 176, 190, 0.4);
+  width: 500px;
+  border-radius: 5px;
+  padding: 24px;
+}
+
+.button-container
+{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  column-gap: 8px;
+  /* background-color: gray; */
+  margin-bottom: 8px;
+}
+
+/* button styles - primary button & secondary buttons */
+
+
+
+
+.primary-button
+{
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(10, 66, 131);
+  color: white;
+  cursor: pointer;
+  transition: all 0.14s;
+}
+
+.primary-button:hover
+{
+  background-color: rgb(14, 85, 165);
+}
+
+.primary-button:active
+{
+  opacity: 0.8;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.secondary-button
+{
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(14, 85, 165);
+  border-radius: 5px;
+  padding: 5px 14px;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  cursor: pointer;
+  transition: all 0.14s;
+}
+
+.secondary-button:hover
+{
+  background-color: rgb(114, 137, 163);
+}
+
+.secondary-button:active
+{
+  opacity: 0.8;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.reset-button
+{
+  margin-top: 16px;
+  border-color: rgb(138, 50, 50);
+}
+
+.reset-button:hover
+{
+  background-color: rgb(199, 145, 145);
+}
