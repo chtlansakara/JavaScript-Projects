@@ -5,9 +5,10 @@ function convertLength(length, from, to){
   if(from === 'miles'){
     if(to === 'miles'){
       alert('Same unit chosen!');
+      // early return from function
       return;
     }else if(to === 'km'){
-      convertedLength = length * 1.6;
+      convertedLength = (length * 1.6).toFixed(4);
       console.log(`Conversion from miles to km: ${convertedLength}km`);
     }else if( to === 'ft'){
       convertedLength = length * 5280;
@@ -17,8 +18,9 @@ function convertLength(length, from, to){
   if(from === 'km'){
     if(to === 'km'){
       alert('Same unit chosen!');
+      return;
     }else if(to === 'miles'){
-      convertedLength = length / 1.6;
+      convertedLength = (length / 1.6).toFixed(4);
       console.log(`Conversion from km to miles: ${convertedLength} miles`);
     }else if( to === 'ft'){
       convertedLength = length * 3281;
@@ -28,11 +30,12 @@ function convertLength(length, from, to){
   if(from === 'ft'){
     if(to === 'ft'){
       alert('Same unit chosen!');
+      return;
     }else if(to === 'miles'){
-      convertedLength = length / 5280;
+      convertedLength = (length / 5280).toFixed(4);
       console.log(`Conversion from feet to miles: ${convertedLength} miles`);
     }else if( to === 'km'){
-      convertedLength = length / 3281;
+      convertedLength = (length / 3281).toFixed(4);
       console.log(`Conversion from feet to km: ${convertedLength}km`);
     }
   }
