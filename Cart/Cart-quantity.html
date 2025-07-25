@@ -12,54 +12,51 @@
     <div class="app-container">
 
       <div class="button-container">
-        <button class="primary-button" onclick="
-          console.log(`Cart quantity: ${cartQuantity}`);
+        <button class="primary-button" id="show-quantity-button" onclick="
+          showCartQuantity();
         ">Show Cart Quantity</button>
       </div>
 
       <div class="button-container">
-        <button class="secondary-button" onclick="
-            cartQuantity++;
-            console.log(`Cart quantity: ${cartQuantity}`);
+        <button class="secondary-button" id="add-to-cart-button" onclick="
+            addToCart(1);
           ">Add to Cart</button>
 
-        <button class="secondary-button" onclick="
-            cartQuantity+=2;
-            console.log(`Cart quantity: ${cartQuantity}`);
+        <button class="secondary-button" id="add-2-button" onclick="
+            addToCart(2);
           ">+2</button>
 
-        <button class="secondary-button" onclick="
-            cartQuantity+=3;
-            console.log(`Cart quantity: ${cartQuantity}`);
+        <button class="secondary-button" id="add-3-button" onclick="
+            addToCart(3);
           ">+3</button>
       </div>
 
       <div class="button-container">
-        <button class="secondary-button" onclick="
-            cartQuantity--;
-            console.log(`Cart quantity: ${cartQuantity}`);
+        <button class="secondary-button" id="remove-from-cart-button" onclick="
+            removeFromCart(1);
           ">Remove from cart</button>
 
-        <button class="secondary-button" onclick="
-            cartQuantity-=2;
-            console.log(`Cart quantity: ${cartQuantity}`);
+        <button class="secondary-button" id="remove-2-button" onclick="
+             removeFromCart(2);
           ">-2</button>
 
-        <button class="secondary-button" onclick="
-            cartQuantity-=3;
-            console.log(`Cart quantity: ${cartQuantity}`);
+        <button class="secondary-button" id="remove-3-button" onclick="
+            removeFromCart(3);
           ">-3</button>
       </div>
 
 
       <div class="button-container">
-        <button class="secondary-button reset-button" onclick="
-            cartQuantity = 0;
-            console.log('Cart was reset.');
-            console.log(`Cart quantity: ${cartQuantity}`);
+        <button class="secondary-button reset-button" id="reset-cart-button" onclick="
+            resetCart();
           ">Reset Cart</button>
       </div>
 
+      <div class="display-container">
+        <div class="display-box">
+
+        </div>
+      </div>
 
     </div>
 
