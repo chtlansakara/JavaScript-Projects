@@ -1,5 +1,6 @@
+hideResults();
 
-// keeping the score in an objects
+// keeping the score in an object
 const score = {
   wins : 0,
   losses: 0,
@@ -13,6 +14,9 @@ const score = {
       // to run - when an  option is selected by the user
 
       function playGame(userMove) {
+
+        //hide previous results on page
+        hideResults();
 
         //the computer's move
         const computerMove = selectComputerMove();
@@ -62,26 +66,6 @@ const score = {
       }
 
 
-
-    //function
-      //-to display result
-
-      function showResults(userMove, computerMove, result){
-        
-        //adding 'you' for 'won' and 'lose' & for 'tie', capitalize first
-        if(result === 'won' || result === 'lost'){
-          result = `You ${result}`;
-        }if( result === 'tied'){
-          result = 'Tied';
-        }
-
-        alert(`You picked ${userMove},\nComputer picked ${computerMove},\n${result}! \n\nSCORE- Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
-
-
-      }
-
-
-
     //function 
       // -to select computer move
 
@@ -113,6 +97,38 @@ const score = {
 
       }
 
+
+    //function
+      //-to display result
+      function showResults(userMove, computerMove, result){
+        
+        //adding 'you' for 'won' and 'lose' & for 'tie', capitalize first
+        if(result === 'won' || result === 'lost'){
+          result = `You ${result}`;
+        }if( result === 'tied'){
+          result = 'Tied';
+        }
+
+        // alert(`You picked ${userMove},\nComputer picked ${computerMove},\n${result}! \n\nSCORE- Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+
+        // showing results on page
+        const displayElement  = document.querySelector('.js-display-box');
+        displayElement.classList.add('display-box-show');
+        displayElement.innerHTML = 
+          `You picked ${userMove}.
+          Computer picked ${computerMove}.
+          ${result}!
+          <code>SCORE- Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}</code>`;
+      }
+
+
+    //function
+      //- to hide results on page - 
+      function hideResults(){
+        const displayElement  = document.querySelector('.js-display-box');
+        displayElement.classList.remove('display-box-show');
+      }
+
     //function
      //-to update the score
      function updateScore(result){
@@ -134,12 +150,9 @@ const score = {
      
     //function
      //-to show score
-
     function showScore(){
       console.log(`Score: wins:${score.wins}, losses:${score.losses}, ties:${score.ties}`);
     }
-
-
 
     //function
      //- to reset the score 
@@ -148,6 +161,13 @@ const score = {
       score.losses = 0;
       score.ties = 0;
       console.log('The score was reset!');
+
+      //display reset score on page
+       const displayElement  = document.querySelector('.js-display-box');
+        displayElement.classList.add('display-box-show');
+        displayElement.innerHTML = 
+          `The score was reset!
+          <code>SCORE- Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}</code>`;   
      }
 
 
