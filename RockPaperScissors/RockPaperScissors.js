@@ -141,6 +141,14 @@ const score = {
 
 
 
+    //function
+     //- to reset the score 
+     function resetScore(){
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      console.log('The score was reset!');
+     }
 
 
 
@@ -149,6 +157,8 @@ const score = {
       rockButtonElement = document.querySelector('.js-rock-button');
       paperButtonElement = document.querySelector('.js-paper-button');
       scissorsButtonElement = document.querySelector('.js-scissors-button');
+      // for reset button
+      resetButtonElement = document.querySelector('.js-reset-button');
 
       rockButtonElement.addEventListener('click', () => {
         playGame('rock');
@@ -158,4 +168,8 @@ const score = {
       });
       scissorsButtonElement.addEventListener('click', () => {
         playGame('scissors');
+      });
+
+      resetButtonElement.addEventListener('click', () => {
+        resetScore();
       });

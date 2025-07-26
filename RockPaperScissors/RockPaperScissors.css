@@ -2,7 +2,6 @@
  button
  {
    font-size: 14px;
-   margin-right: 16px;
    border: none;
    padding: 8px 10px;
    border-radius: 5px;
@@ -47,7 +46,8 @@
 
  .title-container
  {
-   /* background-color: gray; */
+   /* background-color: purple; */
+   width: 100%;
    margin-bottom: 24px;
  }
 
@@ -70,6 +70,19 @@
  .button-container
  {
    display: flex;
+   width: 100%;
+   justify-content: space-around;
    /* background-color: yellow; */
 
+ }
+
+ /* styles for reset button */
+ .reset-button
+ {
+   background-color: gray;
+ }
+
+ .reset-button:hover
+ {
+   background-color: rgb(133, 106, 106);
  }
