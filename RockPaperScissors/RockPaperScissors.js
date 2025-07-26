@@ -2,7 +2,7 @@
 // keeping the score in an objects
 const score = {
   wins : 0,
-  loses: 0,
+  losses: 0,
   ties: 0
 };
 
@@ -54,6 +54,8 @@ const score = {
 
         //update score
         updateScore(result);
+        // show score
+        showScore();
 
         // show results
         showResults(userMove, computerMove, result);
@@ -66,14 +68,14 @@ const score = {
 
       function showResults(userMove, computerMove, result){
         
-        //adding 'you' for 'won' and 'lose' & for 'tie', capitalize first letter
+        //adding 'you' for 'won' and 'lose' & for 'tie', capitalize first
         if(result === 'won' || result === 'lost'){
           result = `You ${result}`;
         }if( result === 'tied'){
           result = 'Tied';
         }
 
-        alert(`You picked ${userMove},\nComputer picked ${computerMove},\n${result}!`);
+        alert(`You picked ${userMove},\nComputer picked ${computerMove},\n${result}! \n\nSCORE- Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 
 
       }
@@ -115,9 +117,28 @@ const score = {
      //-to update the score
      function updateScore(result){
 
-      // if( result = '')
+      if( result === 'won'){
+        score.wins += 1;
+        return;
+      } 
+      if( result === 'lost'){
+        score.losses += 1;
+        return;
+      }
+      if( result === 'tied'){
+        score.ties += 1;
+        return;
+      }
+     } 
+     
+     
+    //function
+     //-to show score
 
-     }  
+    function showScore(){
+      console.log(`Score: wins:${score.wins}, losses:${score.losses}, ties:${score.ties}`);
+    }
+
 
 
 
