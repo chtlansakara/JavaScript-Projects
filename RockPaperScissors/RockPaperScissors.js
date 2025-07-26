@@ -7,11 +7,30 @@ const score = {
   ties: 0
 };
 
+// adding event listners to the button 'click' events - with addEventListener() method
+  //for play buttons
+rockButtonElement = document.querySelector('.js-rock-button');
+paperButtonElement = document.querySelector('.js-paper-button');
+scissorsButtonElement = document.querySelector('.js-scissors-button');
+  // for reset button
+resetButtonElement = document.querySelector('.js-reset-button');
+
+rockButtonElement.addEventListener('click', () => {
+  playGame('rock');
+});
+paperButtonElement.addEventListener('click', () => {
+  playGame('paper');
+});
+scissorsButtonElement.addEventListener('click', () => {
+  playGame('scissors');
+});
+
+resetButtonElement.addEventListener('click', () => {
+  resetScore();
+});
 
 
-
-    //function 
-      // to run - when an  option is selected by the user
+    //function - runs  when an  option is selected by the user
 
       function playGame(userMove) {
 
@@ -58,16 +77,13 @@ const score = {
 
         //update score
         updateScore(result);
-        // show score
-        showScore();
 
         // show results
         showResults(userMove, computerMove, result);
       }
 
 
-    //function 
-      // -to select computer move
+    //function - to select computer move
 
       function selectComputerMove() {
 
@@ -98,9 +114,12 @@ const score = {
       }
 
 
-    //function
-      //-to display result
+    //function - to display result
+
       function showResults(userMove, computerMove, result){
+
+        // show score in console
+        showScore();
         
         //adding 'you' for 'won' and 'lose' & for 'tie', capitalize first
         if(result === 'won' || result === 'lost'){
@@ -122,15 +141,15 @@ const score = {
       }
 
 
-    //function
-      //- to hide results on page - 
+    //function - to hide results on page - 
+    
       function hideResults(){
         const displayElement  = document.querySelector('.js-display-box');
         displayElement.classList.remove('display-box-show');
       }
 
-    //function
-     //-to update the score
+    //function - to update the score
+
      function updateScore(result){
 
       if( result === 'won'){
@@ -148,14 +167,13 @@ const score = {
      } 
      
      
-    //function
-     //-to show score
+    //function - to show score
+
     function showScore(){
       console.log(`Score: wins:${score.wins}, losses:${score.losses}, ties:${score.ties}`);
     }
 
-    //function
-     //- to reset the score 
+    //function - to reset the score 
      function resetScore(){
       score.wins = 0;
       score.losses = 0;
@@ -172,24 +190,4 @@ const score = {
 
 
 
-    //ADDITIONAL: 
-      // adding event listners to the button 'click' events
-      rockButtonElement = document.querySelector('.js-rock-button');
-      paperButtonElement = document.querySelector('.js-paper-button');
-      scissorsButtonElement = document.querySelector('.js-scissors-button');
-      // for reset button
-      resetButtonElement = document.querySelector('.js-reset-button');
-
-      rockButtonElement.addEventListener('click', () => {
-        playGame('rock');
-      });
-      paperButtonElement.addEventListener('click', () => {
-        playGame('paper');
-      });
-      scissorsButtonElement.addEventListener('click', () => {
-        playGame('scissors');
-      });
-
-      resetButtonElement.addEventListener('click', () => {
-        resetScore();
-      });
+    
