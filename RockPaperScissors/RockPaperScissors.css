@@ -1,14 +1,75 @@
-.title
-{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  margin-top: 16px;
-  margin-bottom: 8px;
-}
+ /* general styles for buttons */
+ button
+ {
+   font-size: 14px;
+   margin-right: 16px;
+   border: none;
+   padding: 8px 10px;
+   border-radius: 5px;
+   cursor: pointer;
+   background-color: rgb(133, 182, 133);
+   transition: all 0.14s;
+   letter-spacing: 1px;
+ }
 
-.info
-{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 13px;
-  margin-bottom: 24px;
-}
+ button:hover
+ {
+   background-color: rgb(169, 185, 169);
+ }
+
+ button:active
+ {
+   opacity: 0.8;
+ }
+
+ /* specific styles */
+
+ /* to center the app content on the page */
+ .page-container
+ {
+   display: flex;
+   justify-content: center;
+ }
+
+
+ .app-container
+ {
+   display: flex;
+   flex-direction: column;
+   /* to center all text - horizontally*/
+   text-align: center;
+   /* to center all the content inside - horizontally */
+   align-items: center;
+   width: 400px;
+   margin-top: 32px;
+   padding: 16px 24px;
+   background-color: rgb(187, 187, 187);
+   border-radius: 10px;
+ }
+
+ .title-container
+ {
+   /* background-color: gray; */
+   margin-bottom: 24px;
+ }
+
+
+ .title
+ {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 20px;
+   margin-bottom: 8px;
+ }
+
+ .info
+ {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 13px;
+ }
+
+ .button-container
+ {
+   display: flex;
+   /* background-color: yellow; */
+
+ }
