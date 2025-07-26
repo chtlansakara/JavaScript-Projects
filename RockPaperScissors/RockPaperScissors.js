@@ -1,0 +1,92 @@
+
+
+      // adding event listners to the button 'click' events
+      rockButtonElement = document.querySelector('.js-rock-button');
+      paperButtonElement = document.querySelector('.js-paper-button');
+      scissorsButtonElement = document.querySelector('.js-scissors-button');
+
+      rockButtonElement.addEventListener('click', () => {
+        console.log('rock');
+        playGame('rock');
+      });
+      paperButtonElement.addEventListener('click', () => {
+        console.log('paper');
+        playGame('paper');
+      });
+      scissorsButtonElement.addEventListener('click', () => {
+        console.log('scissors');
+        playGame('scissors');
+      });
+
+
+      //function to run - when an  option is selected by the user
+      function playGame(userMove) {
+        //the computer's move
+        const computerMove = selectComputerMove();
+        let result = '';
+
+        //result
+        if (userMove === 'rock') {
+          if (computerMove === 'rock') {
+            result = 'Tie';
+          } else if (computerMove === 'paper') {
+            result = 'You lost';
+          } else if (computerMove === 'scissors') {
+            result = 'You won';
+          }
+        }
+        if (userMove === 'paper') {
+          if (computerMove === 'rock') {
+            result = 'You won';
+          } else if (computerMove === 'paper') {
+            result = 'Tie';
+          } else if (computerMove === 'scissors') {
+            result = 'You lost';
+          }
+        }
+        if (userMove === 'scissors') {
+          if (computerMove === 'rock') {
+            result = 'You lost';
+          } else if (computerMove === 'paper') {
+            result = 'You won';
+          } else if (computerMove === 'scissors') {
+            result = 'Tie';
+          }
+        }
+
+        alert(`You picked ${userMove}, Computer picked ${computerMove}, ${result}.`);
+
+
+      }
+
+
+
+      //function to select automatic computer move
+      function selectComputerMove() {
+        let computerMove = '';
+
+        //using random number to select an option ( 0 <= random  < 1)
+        const rand = Math.random();
+        console.log(rand);
+
+        //choosing one of 3 option
+        if (rand >= 0 && rand <= 1 / 3) {
+          computerMove = 'rock';
+          console.log('computer chose rock');
+        } else if (rand > 1 / 3 && rand <= 2 / 3) {
+          computerMove = 'paper';
+          console.log('computer chose paper');
+
+        } else if (rand > 2 / 3 && rand < 1) {
+          computerMove = 'scissors';
+          console.log('computer chose scissors');
+
+        } else {
+          console.log('No computer move found!');
+        }
+
+        return computerMove;
+
+      }
+
+  
