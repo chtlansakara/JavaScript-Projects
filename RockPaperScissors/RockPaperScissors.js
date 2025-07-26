@@ -1,11 +1,24 @@
-hideResults();
+//retrieving the stored 'score' - as the first thing
+const savedJSONstring = localStorage.getItem('savedScore');
+const retrievedScore = JSON.parse(savedJSONstring);
+// showing saved score if any
+console.log(retrievedScore);
 
-// keeping the score in an object
-const score = {
+
+// keeping the score in an object - 
+  //default operator is used to set the stored value if available,
+   //otherwise the default value of zeroes is applied to 'score' object
+const score = retrievedScore || {
   wins : 0,
   losses: 0,
   ties: 0
 };
+console.log(score);
+
+// hiding previous results on page, if any
+hideResults();
+// displaying score on page
+showScore();
 
 // adding event listners to the button 'click' events - with addEventListener() method
   //for play buttons
@@ -80,6 +93,9 @@ resetButtonElement.addEventListener('click', () => {
 
         // show results
         showResults(userMove, computerMove, result);
+
+        //save to storage 
+        saveScoreToStorage();
       }
 
 
@@ -118,7 +134,7 @@ resetButtonElement.addEventListener('click', () => {
 
       function showResults(userMove, computerMove, result){
 
-        // show score in console
+        // show score
         showScore();
         
         //adding 'you' for 'won' and 'lose' & for 'tie', capitalize first
@@ -134,10 +150,9 @@ resetButtonElement.addEventListener('click', () => {
         const displayElement  = document.querySelector('.js-display-box');
         displayElement.classList.add('display-box-show');
         displayElement.innerHTML = 
-          `You picked ${userMove}.
-          Computer picked ${computerMove}.
-          ${result}!
-          <code>SCORE- Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}</code>`;
+          `You picked <b>${userMove}</b>.
+          Computer picked <b>${computerMove}</b>.
+          <b>${result}!</b>`;
       }
 
 
@@ -170,6 +185,12 @@ resetButtonElement.addEventListener('click', () => {
     //function - to show score
 
     function showScore(){
+
+      //show score on page
+      const scoreElement = document.querySelector('.js-score-box');
+      scoreElement.innerHTML = `<code>SCORE- Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}</code>`;
+
+      //show score in console
       console.log(`Score: wins:${score.wins}, losses:${score.losses}, ties:${score.ties}`);
     }
 
@@ -180,14 +201,22 @@ resetButtonElement.addEventListener('click', () => {
       score.ties = 0;
       console.log('The score was reset!');
 
+      //save reset score to storage
+      saveScoreToStorage();
+
       //display reset score on page
        const displayElement  = document.querySelector('.js-display-box');
         displayElement.classList.add('display-box-show');
         displayElement.innerHTML = 
-          `The score was reset!
-          <code>SCORE- Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}</code>`;   
+          `The score was reset!`;   
+      //update score
+      showScore();
      }
 
 
 
     
+     //function - to save score to storage
+     function saveScoreToStorage(){
+      localStorage.setItem('savedScore', JSON.stringify(score));
+     }
