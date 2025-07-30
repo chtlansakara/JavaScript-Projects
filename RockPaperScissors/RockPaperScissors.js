@@ -194,6 +194,9 @@ resetButtonElement.addEventListener('click', () => {
       console.log(`Score: wins:${score.wins}, losses:${score.losses}, ties:${score.ties}`);
     }
 
+
+
+
     //function - to reset the score 
      function resetScore(){
       score.wins = 0;
@@ -204,12 +207,16 @@ resetButtonElement.addEventListener('click', () => {
       //save reset score to storage
       saveScoreToStorage();
 
-      //display reset score on page
+      //display reset results on page
        const displayElement  = document.querySelector('.js-display-box');
         displayElement.classList.add('display-box-show');
         displayElement.innerHTML = 
-          `The score was reset!`;   
-      //update score
+          `The score was reset!`;
+
+      //remove stored score from storage
+      localStorage.removeItem('savedScore');
+          
+      //show updated score
       showScore();
      }
 
