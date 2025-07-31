@@ -60,7 +60,6 @@ function checkUserGuess(side){
     return selectedGuess;
   }else{
     displayGuessResults(selectedGuess, side);
-    console.log(selectedGuess);
     return false;
   }
 
