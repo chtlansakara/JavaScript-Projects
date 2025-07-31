@@ -1,5 +1,11 @@
 const flipButtonElement = document.querySelector('.js-flip-button');
 
+// Score object to keep guessed right score
+const score = {
+  wins: 0,
+  losses: 0
+};
+
 flipButtonElement.addEventListener('click', () => {
 
  playGame();
@@ -72,11 +78,20 @@ function displayGuessResults(guess, result){
   }else if(guess === result){
     output = 'You guessed right. You WIN!';
     resultboxElement.classList.add('result-box-win');
+    // add to score
+    score.wins++;
   }else{
     output = 'You guessed wrong. You lose!';
     resultboxElement.classList.add('result-box-lose');
+    // add to score
+    score.losses++;
   }
 
   resultboxElement.innerHTML = output;
+
+  // display score
+  const scoreboxElement = document.querySelector('.js-score-box');
+  scoreboxElement.innerHTML = `<code>SCORE: Wins:${score.wins} & Losses:${score.losses}</code>`;
+
 }
 
