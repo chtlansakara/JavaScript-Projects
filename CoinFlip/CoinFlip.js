@@ -1,41 +1,38 @@
 const flipButtonElement = document.querySelector('.js-flip-button');
 
-//keeping the last result
-let lastResult = '';
-
 flipButtonElement.addEventListener('click', () => {
 
-  flipCoin();
+ playGame();
 
 });
 
+function playGame(){
+
+   //flip the coin
+  const side =  flipCoin();
+
+  //display flipped side
+  displayResults(side);
+
+  //check & display guess results
+  checkUserGuess(side);
+
+}
 
 function flipCoin() {
   //create a random number
   const random = Math.random();
 
   //decide which side
-  let result = random < 0.5 ? 'Heads' : 'Tails';
+  let side = random < 0.5 ? 'Heads' : 'Tails';
 
-  //deciding the result
-  if(lastResult){
-    if(result === lastResult){
-      result = result === 'Heads' ? 'Heads again!' : 'Tails again!';
-    }
-  }
+  //displaying which side
+  console.log(`The side is: ${side}`);
 
-  //saving the latest
-  lastResult = result;
-
-  //result
-  console.log(result);
-  displayResults(result);
-  //check & display guess results
-  checkUserGuess(result);
+  //return the flipped side
+  return side;
 
 }
-
-
 
 
 function displayResults(result){
@@ -45,30 +42,41 @@ function displayResults(result){
 
 }
 
-function displayGuessResults(guess, result){
-  let output = '';
-  const resultboxElement = document.querySelector('.js-result-box');
 
-  if(guess === result){
-    output = 'You guessed right. You WIN!';
-    resultboxElement.innerHTML = output;
-    resultboxElement.classList.add('result-box-win');
-  }else{
-    output = 'You guessed wrong. You lose!';
-    resultboxElement.innerHTML = output;
-    resultboxElement.classList.add('result-box-lose');
-  }
-}
-
-function checkUserGuess(result){
+function checkUserGuess(side){
   const selectElement = document.getElementById('userGuess');
   const selectedGuess = selectElement.value;
   
-
-  if(selectedGuess){
+  //if a guess is selected
+  if(selectedGuess === 'Heads' || selectedGuess === 'Tails'){
+    console.log(`Guessed side is: ${selectedGuess}`);
+    displayGuessResults(selectedGuess,side);
+    return selectedGuess;
+  }else{
+    displayGuessResults(selectedGuess, side);
     console.log(selectedGuess);
-    displayGuessResults(selectedGuess,result);
-   
+    return false;
   }
+
+}
+
+
+function displayGuessResults(guess, result){
+  let output = '';
+  const resultboxElement = document.querySelector('.js-result-box');
+  resultboxElement.classList.remove('result-box-win');
+  resultboxElement.classList.remove('result-box-lose');
+
+  if(guess === 'No guess'){
+    output = 'You can guess a result!';
+  }else if(guess === result){
+    output = 'You guessed right. You WIN!';
+    resultboxElement.classList.add('result-box-win');
+  }else{
+    output = 'You guessed wrong. You lose!';
+    resultboxElement.classList.add('result-box-lose');
+  }
+
+  resultboxElement.innerHTML = output;
 }
 
