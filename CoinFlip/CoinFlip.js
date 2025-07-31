@@ -1,10 +1,14 @@
 const flipButtonElement = document.querySelector('.js-flip-button');
 
 // Score object to keep guessed right score
-const score = {
+ //loads the score if there is one saved in storage otherwise zero.
+const score = JSON.parse(localStorage.getItem('guess-score')) || {
   wins: 0,
   losses: 0
 };
+
+//displaying score on page when loaded
+displayScore();
 
 flipButtonElement.addEventListener('click', () => {
 
@@ -22,6 +26,9 @@ function playGame(){
 
   //check & display guess results
   checkUserGuess(side);
+
+  //save score to storage
+  localStorage.setItem('guess-score', JSON.stringify(score));
 
 }
 
@@ -89,8 +96,22 @@ function displayGuessResults(guess, result){
   resultboxElement.innerHTML = output;
 
   // display score
-  const scoreboxElement = document.querySelector('.js-score-box');
-  scoreboxElement.innerHTML = `<code>SCORE: Wins:${score.wins} & Losses:${score.losses}</code>`;
-
+ displayScore();
 }
 
+function displayScore(){
+ const scoreboxElement = document.querySelector('.js-score-box');
+  scoreboxElement.innerHTML = `<code>SCORE: Wins:${score.wins} & Losses:${score.losses}</code>`;
+}
+
+function clearScore(){
+  // set score to zero
+  score.wins = 0;
+  score.losses = 0;
+  //remove score from memory
+  localStorage.removeItem('guess-score');
+  //show removed message in console
+  console.log('Score removed from memory!');
+  //display zero score (updated) on the page
+  displayScore();
+}
