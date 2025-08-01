@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator App</title>
+    <link rel="stylesheet" href="TaxCalculator.css">
+  </head>
+
+  <body>
+
+
+    <div class="page-container">
+
+      <div class="app-container">
+
+        <div class="app-title">Tax Calculator App</div>
+
+        <div class="input-container">
+
+          <div class="input-box">
+            <label for="amount-input">Amount:</label>
+            <input class="text-input" type="text" id="amount-input" class="tax-input">
+          </div>
+
+          <div class="input-box">
+            <label for="taxPer-input">Tax percentage:</label>
+            <input class="text-input percen-input" type="text" id="taxPer-input" class="tax-input">
+            <div class="percen-symbol">&percnt;</div>
+          </div>
+
+        </div>
+
+        <div class="button-container">
+          <button class="calculate-button" onclick="
+            calculateTax();
+            ">Calculate</button>
+        </div>
+
+        <div class="display-container">
+          <div class="display-box js-display-tax"></div>
+          <div class="display-box display-total js-display-total"></div>
+        </div>
+
+
+
+
+
+      </div>
+
+    </div>
+
+    <script src="TaxCalculator.js"></script>
+  </body>
+
+</html>
