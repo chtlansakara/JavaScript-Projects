@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe Button Function</title>
+    <style>
+      /* common buttons styles */
+      button {
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: all 0.14s;
+      }
+
+      button:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      }
+
+      button:active {
+        opacity: 0.7;
+      }
+
+      /* specific styles */
+      .subscribe-button {
+        background-color: rgb(197, 197, 197);
+      }
+
+      .subscribed-button {
+        background-color: gray;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Subscribe Button</h3>
+    <div class="info">Click on the button to subscribe and unsubscribe.</div>
+
+    <button class="subscribe-button js-subscribe-button" onclick="
+      subscribe();
+    ">Subscribe</button>
+
+    <script>
+      function subscribe() {
+        //getting the button element
+        const buttonElement = document.querySelector('.js-subscribe-button');
+        const buttonText = buttonElement.innerHTML;
+
+        if (buttonText === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';
+          // add new class
+          buttonElement.classList.add('subscribed-button');
+        }
+
+        if (buttonText === 'Subscribed') {
+          // remove class
+          buttonElement.classList.remove('subscribed-button');
+          buttonElement.innerHTML = 'Subscribe';
+        }
+
+      }
+    </script>
+  </body>
+
+</html>
