@@ -80,6 +80,7 @@
    display: flex;
    width: 100%;
    justify-content: space-around;
+   align-items: center;
    /* background-color: yellow; */
 
  }
@@ -88,6 +89,7 @@
  .reset-button
  {
    background-color: gray;
+   height: 40px;
  }
 
  .reset-button:hover
@@ -119,6 +121,7 @@
    border-radius: 6px;
    /* to use template strings with breaks for result text */
    white-space-collapse: preserve-breaks;
+   line-height: 36px;
  }
 
  .display-box-show
@@ -136,4 +139,23 @@
    text-align: center;
    padding: 4px 60px;
    margin-top: 16px;
+ }
+
+
+ /* styles for move buttons with image icons */
+ .move-icon
+ {
+   height: 50px;
+ }
+
+ .play-button
+ {
+   background-color: transparent;
+   border: 1px solid white;
+   border-radius: 50%;
+ }
+
+ .results-move-icon
+ {
+   width: 32px;
  }

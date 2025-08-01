@@ -150,8 +150,8 @@ resetButtonElement.addEventListener('click', () => {
         const displayElement  = document.querySelector('.js-display-box');
         displayElement.classList.add('display-box-show');
         displayElement.innerHTML = 
-          `You picked <b>${userMove}</b>.
-          Computer picked <b>${computerMove}</b>.
+          `You : <img src="images/${userMove}-emoji.png" class="results-move-icon"> (${userMove})
+          Computer : <img src="images/${computerMove}-emoji.png" class="results-move-icon"> (${computerMove})
           <b>${result}!</b>`;
       }
 
