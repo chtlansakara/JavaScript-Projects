@@ -179,8 +179,13 @@
 
 
     <script>
-      let calculation = '';
+      //get calculation from storage if present or otherwise empty string is set
+      let calculation = JSON.parse(localStorage.getItem('cal-results')) || '';
+      console.log(calculation);
       const displayElement = document.querySelector('.display-box');
+      displayElement.innerHTML = calculation;
+
+
 
       function press(input) {
         calculation += input;
@@ -192,12 +197,16 @@
         calculation = eval(calculation);
         displayElement.innerHTML = calculation;
         console.log(calculation);
+        //saving to storage
+        localStorage.setItem('cal-results', JSON.stringify(calculation));
       }
 
       function clearAll() {
         calculation = '';
         displayElement.innerHTML = calculation;
         console.log('Cleared!');
+        //remove from storage
+        localStorage.removeItem('cal-results');
       }
 
       // handling key presses
