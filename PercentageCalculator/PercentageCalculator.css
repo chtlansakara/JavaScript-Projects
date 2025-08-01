@@ -122,16 +122,16 @@ body
 
 .display-box
 {
-  font-size: 18px;
   width: 100%;
   text-align: center;
   line-height: 32px;
+  font-size: 14px;
 }
 
 .display-total
 {
   font-weight: 700;
-  color: rgb(59, 59, 59);
+  color: rgb(185, 41, 41);
   line-height: 40px;
-  font-size: 14px;
+
 }

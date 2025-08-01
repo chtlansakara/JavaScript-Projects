@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tax Calculator App</title>
-    <link rel="stylesheet" href="TaxCalculator.css">
+    <link rel="stylesheet" href="PercentageCalculator.css">
   </head>
 
   <body>
@@ -15,18 +15,23 @@
 
       <div class="app-container">
 
-        <div class="app-title">Tax Calculator App</div>
+        <div class="app-title">Percentage Calculator App</div>
 
         <div class="input-container">
 
           <div class="input-box">
             <label for="amount-input">Amount:</label>
-            <input class="text-input" type="text" id="amount-input" class="tax-input">
+            <input class="text-input" type="text" id="amount-input" class="tax-input" autocomplete="off" onkeyup="
+              //display amount typed on the page
+              showTypedAmount();
+            ">
           </div>
 
           <div class="input-box">
             <label for="taxPer-input">Tax percentage:</label>
-            <input class="text-input percen-input" type="text" id="taxPer-input" class="tax-input">
+            <input class="text-input percen-input" type="text" id="taxPer-input" class="tax-input" onkeyup="
+              showErrorPercentage();
+            ">
             <div class="percen-symbol">&percnt;</div>
           </div>
 
@@ -51,7 +56,7 @@
 
     </div>
 
-    <script src="TaxCalculator.js"></script>
+    <script src="PercentageCalculator.js"></script>
   </body>
 
 </html>
