@@ -182,7 +182,8 @@ button:active
   color: white;
 }
 
-.error-message
+.error-message,
+.form-error-message
 {
   font-size: 12px;
   color: rgb(236, 104, 104);
@@ -211,4 +212,10 @@ button:active
   position: absolute;
   bottom: 12px;
   right: 15px;
+}
+
+/* remove hover and active effects when disabled */
+.submit-button:disabled
+{
+  pointer-events: none;
 }
