@@ -1,6 +1,6 @@
 
-//creating a user
-let user = {
+//creating a user or get from storage if there
+let user = JSON.parse(localStorage.getItem('user')) ||  {
   firstName: '',
   lastName: '',
   gender: '',
@@ -16,6 +16,9 @@ let user = {
     youngerBrothers: false
   }
 }
+
+//show the loaded user object
+console.log(user);
 
 // to keep last toggled on gender
 let userGender = '';
@@ -134,6 +137,8 @@ function createAUser(){
 //function - to validate the form
 function validateForm(){
   saveUser();
+  //save user to local storage
+  localStorage.setItem('user', JSON.stringify(user));
 }
 
 function saveUser(){
@@ -204,6 +209,7 @@ function saveUser(){
 
   //show saved object in the console
   console.log(user);
+
 }
 
 //to show an error message at the bottom of the form
