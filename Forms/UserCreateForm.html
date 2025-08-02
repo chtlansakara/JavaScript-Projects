@@ -12,8 +12,11 @@
     <div class="page-container">
 
       <div class="app-container">
-
-        <div class="form-container">
+        <!-- to include a form with buttons, we need to avoid default behavior 
+         with this -->
+        <form class="form-container" onsubmit="
+          event.preventDefault();
+          ">
 
           <div class="form-content">
 
@@ -109,7 +112,7 @@
           </div>
 
 
-        </div>
+        </form>
 
       </div>
 
