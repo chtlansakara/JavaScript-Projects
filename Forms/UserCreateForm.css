@@ -1,0 +1,214 @@
+/* general styles */
+body
+{
+  font-family: Verdana, Arial;
+  font-size: 16px;
+}
+
+button
+{
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  transition: all 0.14s;
+}
+
+button:hover
+{
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+button:active
+{
+  opacity: 0.7;
+}
+
+
+/* specific styles */
+.page-container
+{
+  /* background-color: gray; */
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px;
+
+}
+
+.app-container
+{
+  background-color: rgb(57, 82, 57);
+  padding: 16px 16px;
+  border-radius: 5px;
+  width: 500px;
+}
+
+.form-container
+{
+  background-color: rgb(39, 39, 39);
+  opacity: 0.9;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 8px 16px 32px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* styles for form content */
+.form-content
+{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  padding-bottom: 16px;
+  margin-bottom: 4px;
+  /* background-color: rgb(165, 165, 57); */
+}
+
+
+.form-title
+{
+  color: white;
+  font-size: 18px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.form-subtitle
+{
+  color: white;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+/* special containers */
+.button-container
+{
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+.birthdate-container
+{
+  display: grid;
+  grid-template-columns: 150px 100px 80px;
+  column-gap: 16px;
+}
+
+
+
+.date-input-box
+{
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+}
+
+/* styles for input */
+.input-box
+{
+  background-color: rgb(214, 212, 93);
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+
+
+.inner-labeled-input
+{
+  padding: 22px 2px 4px 8px;
+  border: 0.5px solid gray;
+  border-radius: 4px;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+  /* remove the default outline for input */
+  outline: none;
+  width: 100%;
+}
+
+.inner-label
+{
+  position: absolute;
+  top: 14px;
+  left: 8px;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+/* when focused on input - make the label smaller */
+.inner-labeled-input:focus~.inner-label
+{
+  top: 4px;
+  left: 6px;
+  font-size: 12px;
+  color: rgb(102, 136, 98);
+}
+
+/* - make the color of the input change */
+.inner-labeled-input:focus
+{
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(69, 177, 57);
+}
+
+
+/* when value is in input & out of focus - make the label smaller still */
+.inner-labeled-input:not(:placeholder-shown).inner-labeled-input:not(:focus)~.inner-label
+{
+  top: 4px;
+  left: 6px;
+  font-size: 12px;
+  color: rgb(90, 90, 90);
+
+}
+
+/* other styles */
+.info
+{
+  font-size: 12px;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.error-message
+{
+  font-size: 12px;
+  color: rgb(236, 104, 104);
+  line-height: 32px;
+}
+
+/* styles for  buttons */
+
+.toggle-gender-button
+{
+  background-color: rgb(255, 255, 255);
+}
+
+.toggle-gender-button-on,
+.toggle-sibling-button-on
+{
+  background-color: #45925c;
+  color: white;
+}
+
+
+.submit-button
+{
+  background-color: rgb(226, 171, 52);
+  width: 50%;
+  position: absolute;
+  bottom: 12px;
+  right: 15px;
+}

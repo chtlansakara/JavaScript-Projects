@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a user</title>
+    <link rel="stylesheet" href="UserCreateForm.css">
+  </head>
+
+  <body>
+    <div class="page-container">
+
+      <div class="app-container">
+
+        <div class="form-container">
+
+          <div class="form-content">
+
+            <div class="form-title">Create User Account</div>
+            <div class="form-subtitle">Basic information</div>
+
+          </div>
+
+          <div class="form-content">
+
+            <div class="input-box">
+              <input type="text" id="firstName" class="inner-labeled-input" placeholder=" ">
+              <label for="firstName" class="inner-label">First name </label>
+            </div>
+            <div class="input-box">
+              <input type="text" id="lastName" class="inner-labeled-input" placeholder=" ">
+              <label for="lastName" class="inner-label">Last name </label>
+            </div>
+
+          </div>
+
+          <div class="form-content">
+            <div class="info">Gender:</div>
+            <div class="button-container">
+
+              <button class="toggle-gender-button" id="female" onclick="
+                toggleButton('female');
+                ">Female</button>
+              <button class="toggle-gender-button" id="male" onclick="
+                toggleButton('male');
+              ">Male</button>
+
+            </div>
+          </div>
+
+
+          <div class="form-content">
+            <div class="info">Birth date:</div>
+            <div class="birthdate-container">
+
+              <div class="date-input-box">
+                <input type="text" id="year" class="inner-labeled-input " placeholder=" " onkeyup="
+                  checkForDateErrors('year');
+                  ">
+                <label for="year" class="inner-label">Year</label>
+              </div>
+
+              <div class="date-input-box">
+                <input type="text" id="month" class="inner-labeled-input" placeholder=" " onkeyup="
+                  checkForDateErrors('month');
+                  ">
+                <label for="month" class="inner-label">Month</label>
+              </div>
+
+              <div class="date-input-box">
+                <input type="text" id="date" class="inner-labeled-input " placeholder=" " onkeyup="
+                  checkForDateErrors('date');
+                  ">
+                <label for="date" class="inner-label">Date</label>
+              </div>
+
+            </div>
+            <div class="error-message"></div>
+
+          </div>
+
+
+          <div class="form-content">
+            <div class="info">Siblings:</div>
+            <div class="button-container">
+
+              <button class="toggle-gender-button" id="Esister" onclick="
+                toggleMultipleButtons('Esister');
+                ">Elder sister/s</button>
+              <button class="toggle-gender-button" id="Ysister" onclick="
+                toggleMultipleButtons('Ysister');
+                ">Younger sister/s</button>
+              <button class="toggle-gender-button" id="Ebrother" onclick="
+                toggleMultipleButtons('Ebrother');
+              ">Elder brother/s</button>
+              <button class="toggle-gender-button" id="Ybrother" onclick="
+                toggleMultipleButtons('Ybrother');
+              ">Younger brother/s</button>
+
+            </div>
+          </div>
+
+          <div class="form-content">
+            <button class="submit-button">Submit</button>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <script src="UserCreateForm.js"></script>
+  </body>
+
+</html>
