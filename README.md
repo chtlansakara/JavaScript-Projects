@@ -7,3 +7,4 @@ Mini JavaScript projects to build up JavaScript skills gradually.
 6. Convert distance app - An app to convert between distance units - mile, km, and feet.
 7. Coin flip app - An app where user can flip a coin & guess the result beforehand.
 8. Percentage calculator app - An app to calculate percentages by giving both the amount and the percentage.
+9. Forms - A form to create a user with basic information which can be saved to local storage and loaded from storage into the form elements.
