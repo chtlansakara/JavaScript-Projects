@@ -1,0 +1,127 @@
+body
+{
+  margin: auto;
+  font-family: Arial;
+  font-size: 16px;
+}
+
+.page-container
+{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  min-height: 200px;
+  align-items: center;
+}
+
+.app-container
+{
+  background-color: rgba(10, 37, 10, 0.7);
+  width: 500px;
+  display: flex;
+  justify-content: start;
+  padding: 16px;
+  border-radius: 8px;
+  color: white;
+  margin: 16px 0;
+}
+
+.app-form
+{
+  width: 100%;
+}
+
+.form-row
+{
+  margin-bottom: 16px;
+
+  padding: 8px 8px;
+  border-radius: 4px;
+}
+
+.form-section
+{
+  background-color: rgba(32, 32, 5, 0.5);
+}
+
+.form-title
+{
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.form-instructions
+{
+  font-size: 13px;
+}
+
+.form-subtitle
+{
+  font-size: 15px;
+  /* font-weight: 700; */
+  /* letter-spacing: 0.5px; */
+  margin-bottom: 4px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input-box
+{
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.text-input
+{
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  margin-left: 4px;
+}
+
+.input-label
+{
+  width: 100px;
+  font-size: 14px;
+}
+
+.button-container
+{
+  /* background-color: purple; */
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 8px;
+}
+
+button
+{
+  cursor: pointer;
+  border: none;
+  padding: 8px 32px;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: all 0.14s;
+}
+
+button:hover
+{
+  box-shadow: inset 0 0 5px rgba(10, 37, 10, 0.7);
+}
+
+button:active
+{
+  opacity: 0.7;
+}
+
+.submit-button
+{
+  background-color: rgb(20, 71, 20);
+  color: white;
+}
+
+.clear-button
+{
+  background-color: rgb(211, 211, 211);
+
+}
