@@ -1,3 +1,5 @@
+// to keep last toggled on gender
+let userGender = '';
 
 //creating a user or get from storage if there
 let user = JSON.parse(localStorage.getItem('user')) ||  {
@@ -17,11 +19,17 @@ let user = JSON.parse(localStorage.getItem('user')) ||  {
   }
 }
 
+
 //show the loaded user object
 console.log(user);
 
-// to keep last toggled on gender
-let userGender = '';
+//set user data in the form - if there is a saved user
+if(user.firstName){
+  setUser();
+  console.log('User is present!');
+}
+
+
 
 
 
@@ -270,4 +278,39 @@ function invalidDate(date,month){
       return true;
     }
   }
+}
+
+
+//function to set user data in the form when loaded
+function setUser(){
+   const firstNameElement = document.getElementById('firstName');
+   firstNameElement.value = user.firstName;
+
+   const lastNameElement = document.getElementById('lastName');
+   lastNameElement.value = user.lastName;
+
+  const birthYearElement = document.getElementById('year');
+  birthYearElement.value = user.birthdate.year;
+
+  const birthMonthElement = document.getElementById('month');
+ birthMonthElement.value = user.birthdate.month;
+
+  const birthDateElement = document.getElementById('date');
+  birthDateElement.value = user.birthdate.date;
+
+   toggleButton(user.gender);
+
+   if(user.siblings.elderSisters){
+       toggleMultipleButtons('Esister');
+   }
+   if(user.siblings.youngerSisters){
+       toggleMultipleButtons('Ysister');
+   }
+   if(user.siblings.elderBrothers){
+       toggleMultipleButtons('Ebrother');
+   }
+   if(user.siblings.youngerBrothers){
+       toggleMultipleButtons('Ybrother');
+   }
+
 }
