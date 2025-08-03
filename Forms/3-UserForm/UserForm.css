@@ -59,7 +59,6 @@ body
 .form-row
 {
   /* background-color: gray; */
-  margin-bottom: 8px;
 }
 
 .form-fieldset
@@ -67,6 +66,7 @@ body
   border: none;
   padding: 0;
   margin: 0;
+  /* background-color: purple; */
 }
 
 
@@ -75,10 +75,13 @@ body
 {
   font-size: 12px;
   padding: 0;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .form-control
 {
+  /* background-color: yellow; */
   display: flex;
   align-items: center;
   margin: 8px 0;
@@ -93,8 +96,10 @@ body
   font-size: 15px;
 }
 
-.form-control input
+.form-control input,
+.form-control select
 {
+  /* background-color: gray; */
   flex: 1;
   padding: 8px;
   border-radius: 4px;
@@ -119,6 +124,7 @@ body
   left: 0;
   visibility: hidden;
 }
+
 
 /* styles for success & error states of form control--------------------------------- */
 /* when 'success' and 'error' classes are added to 'form-control' */
@@ -192,4 +198,78 @@ body
 {
   background-color: rgb(211, 211, 211);
 
+}
+
+/* styles for radio buttons */
+.radio-form-control
+{
+  flex: 1;
+  padding: 8px 0;
+  display: flex;
+  justify-content: start;
+  column-gap: 24px;
+  /* background-color: gray; */
+  margin-left: 4px;
+}
+
+.radio-button
+{
+  display: flex;
+  justify-content: start;
+  /* background-color: gray; */
+}
+
+.radio-button label
+{
+
+  width: 50px;
+  display: inline-block;
+}
+
+input[type="radio"]
+{
+  display: inline-block;
+  height: 12px;
+  width: 20px;
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+/* styles for checkbox  */
+.check-form-control
+{
+  flex: 1;
+  padding: 8px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 6px;
+  column-gap: 4px;
+  margin-left: 4px;
+  align-items: center;
+}
+
+.check-button
+{
+  /* background-color: gray; */
+  display: flex;
+}
+
+.check-button label
+{
+  /* width: 110px; */
+  /* background-color: yellow; */
+}
+
+input[type="checkbox"]
+{
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+}
+
+.form-control output
+{
+  width: 32px;
+  text-align: center;
+  /* background-color: yellow; */
 }

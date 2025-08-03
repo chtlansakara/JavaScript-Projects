@@ -25,72 +25,184 @@
 
         <form class="app-form">
 
-          <div class="form-row ">
-            <fieldset class="form-fieldset">
-              <legend class="form-legend">Personal Information:</legend>
-              <div class="form-control">
-                <label for="first-name">First name: </label>
-                <input type="text" id="first-name" name="first-name">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-              </div>
-              <div class="form-control">
-                <label for="last-name">Last name:</label>
-                <input type="text" id="last-name" name="last-name">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-              </div>
-            </fieldset>
-          </div>
 
-          <div class="form-row ">
-            <fieldset class="form-fieldset">
-              <legend class="form-legend">Other Information:
-              </legend>
-              <div class="form-control">
-                <label for="first-line">First line: </label>
-                <input type="text" id="first-line" name="first-line">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
+          <fieldset class="form-fieldset">
+            <legend class="form-legend">Personal Information:</legend>
+
+            <div class="form-control">
+              <label for="first-name">First name: </label>
+              <input type="text" id="first-name" name="first-name" placeholder="eg: Sophie">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+              <label for="last-name">Last name:</label>
+              <input type="text" id="last-name" name="last-name" placeholder="eg: Turner">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+
+            <div class="form-control">
+              <label for="gender"> Gender: </label>
+              <div class="radio-form-control">
+
+                <div class="radio-button">
+                  <label for="female">Female</label>
+                  <input type="radio" name="gender" id="female">
+                </div>
+
+                <div class="radio-button">
+                  <label for="male">Male</label>
+                  <input type="radio" name="gender" id="male">
+                </div>
+
               </div>
-              <div class="form-control">
-                <label for="second-line">Second line:</label>
-                <input type="text" id="second-line" name="second-line">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
+            </div>
+
+
+
+
+            <div class="form-control">
+              <label for="last-name">Birth date:</label>
+              <input type="date" id="birth-date" name="birth-date">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+              <label for="last-name">Birth time:</label>
+              <input type="time" id="birth-date" name="birth-date">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+              <label for="birth-country-list">Birth country:</label>
+              <select id="birth-country-list">
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="Australia">Australia</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+              </select>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="birth-city-list">Birth city:</label>
+              <input list="birth-city" id="birth-city-list" name="birth-city-list">
+              <datalist id="birth-city">
+                <option value="Colombo">Colombo, Sri Lanka</option>
+                <option value="Melbourne">Melbourne, Australia</option>
+                <option value="Wellington">Wellington, New Zealand</option>
+                <option value="California">California, USA</option>
+                <option value="London">London, UK</option>
+              </datalist>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <div class="form-control">
+              <label for="siblings"> Siblings: </label>
+              <div class="check-form-control">
+
+                <div class="check-button">
+                  <label for="elder-sisters">Elder sister/s</label>
+                  <input type="checkbox" name="siblings" id="elder-sisters">
+                </div>
+
+                <div class="check-button">
+                  <label for="elder-brothers">Elder brother/s</label>
+                  <input type="checkbox" name="siblings" id="elder-brothers">
+                </div>
+                <div class="check-button">
+                  <label for="younger-sisters">Younger sister/s</label>
+                  <input type="checkbox" name="siblings" id="younger-sisters">
+                </div>
+
+                <div class="check-button">
+                  <label for="younger-brothers">Younger brother/s</label>
+                  <input type="checkbox" name="siblings" id="younger-brothers">
+                </div>
+
               </div>
-              <div class="form-control">
-                <label for="third-line">Third line:</label>
-                <input type="text" id="third-line" name="third-line">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-              </div>
-              <div class="form-control">
-                <label for="forth-line">Forth line:</label>
-                <input type="text" id="forth-line" name="forth-line">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-              </div>
-            </fieldset>
-          </div>
+            </div>
+
+            <div class="form-control">
+              <label for="height">Height (feet):</label>
+              <input type="range" list="tickmarks" id="height" name="height" min="1" max="8" step="0.5" value="5">
+              <output name="height-result" for="height">5</output>
+              <datalist id="tickmarks">
+                <option value="1" label="1">1</option>
+                <option value="2" label="2">2</option>
+                <option value="3" label="3">3</option>
+                <option value="4" label="4">4</option>
+                <option value="5" label="5">5</option>
+                <option value="6" label="6">6</option>
+                <option value="7" label="7">7</option>
+                <option value="8" label="8">8</option>
+              </datalist>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+          </fieldset>
+
+
+
+          <fieldset class="form-fieldset">
+            <legend class="form-legend">Other Information:</legend>
+
+            <div class="form-control">
+              <label for="first-line">First line: </label>
+              <input type="text" id="first-line" name="first-line">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="second-line">Second line:</label>
+              <input type="text" id="second-line" name="second-line">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="third-line">Third line:</label>
+              <input type="text" id="third-line" name="third-line">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="forth-line">Forth line:</label>
+              <input type="text" id="forth-line" name="forth-line">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+          </fieldset>
+
 
           <div class="form-row">
 
             <div class="button-container">
               <button type="reset" class="clear-button">
-                Reset
+                Clear
               </button>
               <button type="submit" class="submit-button">
                 Submit
               </button>
-
-
             </div>
 
           </div>
