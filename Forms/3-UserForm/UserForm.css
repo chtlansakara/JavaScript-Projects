@@ -1,118 +1,186 @@
+/* Google font - 
+ "Nunito Sans" is imported*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
 body
 {
-  margin: auto;
-  font-family: Arial;
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
 }
 
 .page-container
 {
-  background-color: black;
+  background: linear-gradient(to right, rgb(10, 37, 10), black);
   display: flex;
   justify-content: center;
-  min-height: 200px;
+  min-height: 100vh;
   align-items: center;
 }
 
 .app-container
 {
-  background-color: rgba(10, 37, 10, 0.7);
-  width: 500px;
-  display: flex;
-  justify-content: start;
-  padding: 16px;
+  background-color: rgb(255, 255, 255);
+  width: 450px;
   border-radius: 8px;
-  color: white;
   margin: 16px 0;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
 }
 
-.app-form
+.form-header
 {
-  width: 100%;
+  background-color: rgba(225, 225, 225, 0.2);
+  padding: 8px 40px;
+  border-bottom: 1px solid rgba(202, 201, 201, 0.2);
 }
 
-.form-row
+.form-header h2
 {
-  margin-bottom: 16px;
-
-  padding: 8px 8px;
-  border-radius: 4px;
-}
-
-.form-section
-{
-  background-color: rgba(32, 32, 5, 0.5);
-}
-
-.form-title
-{
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 16px;
+  margin: 0;
+  padding-top: 16px;
+  font-weight: 800;
 }
 
 .form-instructions
 {
+  margin-top: 4px;
   font-size: 13px;
 }
 
-.form-subtitle
+.app-form
 {
-  font-size: 15px;
-  /* font-weight: 700; */
-  /* letter-spacing: 0.5px; */
-  margin-bottom: 4px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 24px 40px;
 }
 
-.input-box
+
+
+.form-row
+{
+  /* background-color: gray; */
+  margin-bottom: 8px;
+}
+
+.form-fieldset
+{
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.form-legend
+{
+  font-size: 12px;
+  padding: 0;
+}
+
+.form-control
 {
   display: flex;
   align-items: center;
+  margin: 8px 0;
+  padding-bottom: 16px;
+  /* to add icons & error messages on it */
+  position: relative;
+}
+
+.form-control label
+{
+  width: 100px;
+  font-size: 15px;
+}
+
+.form-control input
+{
+  flex: 1;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid rgb(197, 197, 197);
+  margin-left: 4px;
+  font-family: inherit;
+}
+
+.form-control i
+{
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  visibility: hidden;
+}
+
+.form-control small
+{
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+/* styles for success & error states of form control--------------------------------- */
+/* when 'success' and 'error' classes are added to 'form-control' */
+
+.form-control.success input
+{
+  border-color: rgb(20, 71, 20);
+}
+
+.form-control.error input
+{
+  border-color: rgb(143, 9, 9);
+}
+
+.form-control.success i.fa-check-circle
+{
+  color: rgb(20, 71, 20);
+  visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle
+{
+  color: rgb(143, 9, 9);
+  visibility: visible;
+}
+
+.form-control.error small
+{
+  visibility: visible;
+  color: rgb(233, 51, 30);
+}
+
+/* --------------------------- */
+.button-container
+{
+  display: flex;
+  justify-content: space-between;
   padding: 8px 0;
 }
 
-.text-input
-{
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: 1px solid gray;
-  margin-left: 4px;
-}
-
-.input-label
-{
-  width: 100px;
-  font-size: 14px;
-}
-
-.button-container
-{
-  /* background-color: purple; */
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 8px;
-}
-
-button
+.app-form button
 {
   cursor: pointer;
   border: none;
-  padding: 8px 32px;
+  padding: 8px 42px;
   border-radius: 4px;
   font-size: 15px;
+  font-family: inherit;
   transition: all 0.14s;
 }
 
-button:hover
+.app-form button:hover
 {
-  box-shadow: inset 0 0 5px rgba(10, 37, 10, 0.7);
+  box-shadow: 0 0 5px rgba(10, 10, 10, 0.7);
 }
 
-button:active
+.app-form button:active
 {
   opacity: 0.7;
 }
+
+/* specific button styles */
 
 .submit-button
 {

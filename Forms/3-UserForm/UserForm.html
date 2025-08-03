@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Form</title>
     <link rel="stylesheet" href="UserForm.css">
+    <!-- fontawesome libray is used for icons -->
+    <script src="https://kit.fontawesome.com/27a022a1e9.js" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
@@ -15,53 +18,75 @@
 
       <div class="app-container">
 
+        <div class="form-header">
+          <h2 class="form-title">Create New User</h2>
+          <div class="form-instructions">Create a user with basic information.</div>
+        </div>
+
         <form class="app-form">
 
-          <div class="form-row">
-            <div class="form-title">User Form</div>
-            <div class="form-instructions">Create a user with basic information.</div>
+          <div class="form-row ">
+            <fieldset class="form-fieldset">
+              <legend class="form-legend">Personal Information:</legend>
+              <div class="form-control">
+                <label for="first-name">First name: </label>
+                <input type="text" id="first-name" name="first-name">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="last-name">Last name:</label>
+                <input type="text" id="last-name" name="last-name">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+            </fieldset>
           </div>
 
-          <div class="form-row form-section">
-            <div class="form-subtitle">Name:</div>
-            <div class="input-box">
-              <label for="first-name" class="input-label">First name: </label>
-              <input type="text" class="text-input" id="first-name" name="first-name">
-            </div>
-            <div class="input-box">
-              <label for="last-name" class="input-label">Last name:</label>
-              <input type="text" class="text-input" id="last-name" name="last-name">
-            </div>
-
-          </div>
-          <div class="form-row form-section">
-            <div class="form-subtitle">Address:</div>
-            <div class="input-box">
-              <label for="first-line" class="input-label">First line: </label>
-              <input type="text" class="text-input" id="first-line" name="first-line">
-            </div>
-            <div class="input-box">
-              <label for="second-line" class="input-label">Second line:</label>
-              <input type="text" class="text-input" id="second-line" name="second-line">
-            </div>
-            <div class="input-box">
-              <label for="third-line" class="input-label">Third line:</label>
-              <input type="text" class="text-input" id="third-line" name="third-line">
-            </div>
-            <div class="input-box">
-              <label for="forth-line" class="input-label">Forth line:</label>
-              <input type="text" class="text-input" id="forth-line" name="forth-line">
-            </div>
-
+          <div class="form-row ">
+            <fieldset class="form-fieldset">
+              <legend class="form-legend">Other Information:
+              </legend>
+              <div class="form-control">
+                <label for="first-line">First line: </label>
+                <input type="text" id="first-line" name="first-line">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="second-line">Second line:</label>
+                <input type="text" id="second-line" name="second-line">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="third-line">Third line:</label>
+                <input type="text" id="third-line" name="third-line">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="form-control">
+                <label for="forth-line">Forth line:</label>
+                <input type="text" id="forth-line" name="forth-line">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+            </fieldset>
           </div>
 
           <div class="form-row">
 
             <div class="button-container">
-              <button class="clear-button">
-                Clear
+              <button type="reset" class="clear-button">
+                Reset
               </button>
-              <button class="submit-button">
+              <button type="submit" class="submit-button">
                 Submit
               </button>
 
