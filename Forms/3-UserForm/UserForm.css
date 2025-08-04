@@ -262,7 +262,7 @@ input[type="radio"]
 .check-button
 {
   display: flex;
-  background-color: gray;
+  /* background-color: gray; */
 }
 
 .check-button label
