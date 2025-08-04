@@ -29,14 +29,19 @@
           <fieldset class="form-fieldset">
             <legend class="form-legend">Personal Information:</legend>
 
+            <!-- first name - as <input> of type 'text' -->
             <div class="form-control">
               <label for="first-name">First name: </label>
               <input type="text" id="first-name" name="first-name" placeholder="eg: Sophie">
+
+              <!-- icons to show success & error states of the form control -->
               <i class="fas fa-check-circle"></i>
               <i class="fas fa-exclamation-circle"></i>
+              <!-- to display error message for the form control -->
               <small>Error message</small>
             </div>
 
+            <!-- last name -->
             <div class="form-control">
               <label for="last-name">Last name:</label>
               <input type="text" id="last-name" name="last-name" placeholder="eg: Turner">
@@ -45,9 +50,21 @@
               <small>Error message</small>
             </div>
 
+            <!-- nick name -->
+            <div class="form-control">
+              <label for="nick-name">Nick name:</label>
+              <input type="text" id="nick-name" name="nick-name" placeholder="eg: Soph">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
 
+
+            <!-- gender - as <input> of type 'radio' buttons -->
+            <!-- needs fixing of structure -->
             <div class="form-control">
               <label for="gender"> Gender: </label>
+
               <div class="radio-form-control">
 
                 <div class="radio-button">
@@ -60,12 +77,21 @@
                   <input type="radio" name="gender" id="male">
                 </div>
 
+                <div class="radio-button">
+                  <label for="other">Other</label>
+                  <input type="radio" name="gender" id="other">
+                </div>
+
               </div>
+
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
             </div>
 
 
 
-
+            <!-- birth date - as <input> of type 'date' -->
             <div class="form-control">
               <label for="last-name">Birth date:</label>
               <input type="date" id="birth-date" name="birth-date">
@@ -74,6 +100,7 @@
               <small>Error message</small>
             </div>
 
+            <!-- birth time  - as <input> of type 'time'-->
             <div class="form-control">
               <label for="last-name">Birth time:</label>
               <input type="time" id="birth-date" name="birth-date">
@@ -82,6 +109,7 @@
               <small>Error message</small>
             </div>
 
+            <!-- birth country list - as <select> & <option> list -->
             <div class="form-control">
               <label for="birth-country-list">Birth country:</label>
               <select id="birth-country-list">
@@ -95,9 +123,10 @@
               <i class="fas fa-exclamation-circle"></i>
               <small>Error message</small>
             </div>
+            <!-- birth city list - as <input> with <datalist> suggestions list -->
             <div class="form-control">
               <label for="birth-city-list">Birth city:</label>
-              <input list="birth-city" id="birth-city-list" name="birth-city-list">
+              <input list="birth-city" id="birth-city-list" name="birth-city-list" placeholder="Birth city">
               <datalist id="birth-city">
                 <option value="Colombo">Colombo, Sri Lanka</option>
                 <option value="Melbourne">Melbourne, Australia</option>
@@ -109,9 +138,40 @@
               <i class="fas fa-exclamation-circle"></i>
               <small>Error message</small>
             </div>
-
+            <!-- living country list - as <select> & <option> list -->
             <div class="form-control">
-              <label for="siblings"> Siblings: </label>
+              <label for="living-country-list">Living country:</label>
+              <select id="living-country-list">
+                <option value="Australia">Australia</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+                <option value="New Zealand">New Zealand</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+              </select>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <!-- living city list - as <input> with <datalist> suggestions list -->
+            <div class="form-control">
+              <label for="living-city-list">Living city:</label>
+              <input list="living-city" id="living-city-list" name="living-city-list" placeholder="Current city">
+              <datalist id="living-city">
+                <option value="Melbourne">Melbourne, Australia</option>
+                <option value="Colombo">Colombo, Sri Lanka</option>
+                <option value="Wellington">Wellington, New Zealand</option>
+                <option value="California">California, USA</option>
+                <option value="London">London, UK</option>
+              </datalist>
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <!-- siblings - as <input> as 'checkbox' -->
+            <!-- needs fixing structure -->
+            <div class="form-control">
+              <label for="siblings" class="checkbox-label"> Siblings: </label>
               <div class="check-form-control">
 
                 <div class="check-button">
@@ -136,6 +196,16 @@
               </div>
             </div>
 
+            <!-- Occupation-->
+            <div class="form-control">
+              <label for="occupation">Occupation:</label>
+              <input type="text" id="occupation" name="occupation" placeholder="eg: Student / Business Owner / Nurse">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <!-- height -as <input> of type 'range' -->
             <div class="form-control">
               <label for="height">Height (feet):</label>
               <input type="range" list="tickmarks" id="height" name="height" min="1" max="8" step="0.5" value="5">
@@ -155,41 +225,109 @@
               <small>Error message</small>
             </div>
 
+            <!--weight - as <input> of type 'number'  -->
+            <div class="form-control">
+              <label for="weight">Weight(kg):</label>
+              <input type="number" id="weight" name="weight" min="10" max="200" value="52.8">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+            <!--fav-color - as <input> of type 'number'  -->
+            <div class="form-control">
+              <label for="fav-color">Favorite color:</label>
+              <input type="color" id="fav-color" name="fav-color" value="#DAD42B">
+              <i class=" fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
+
+            <!-- pets - as <input> as 'checkbox' -->
+            <div class="form-control">
+              <label for="pets" class="checkbox-label">Pets: </label>
+              <div class="check-form-control">
+
+                <div class="check-button">
+                  <label for="dogs">Dog/s</label>
+                  <input type="checkbox" name="pets" id="dogs">
+                </div>
+
+                <div class="check-button">
+                  <label for="cats">Cat/s</label>
+                  <input type="checkbox" name="pets" id="cats">
+                </div>
+                <div class="check-button">
+                  <label for="birds">Bird/s</label>
+                  <input type="checkbox" name="pets" id="birds">
+                </div>
+
+                <div class="check-button">
+                  <label for="fish">Fish</label>
+                  <input type="checkbox" name="pets" id="fish">
+                </div>
+
+                <div class="check-button">
+                  <label for="other">Other</label>
+                  <input type="checkbox" name="pets" id="other">
+                </div>
+
+              </div>
+            </div>
+
+
+            <!--image- as <input> of type 'file'  -->
+            <div class="form-control">
+              <label for="user-image">Your image:</label>
+              <input type="file" id="user-mage" name="user-image" value="#DAD42B">
+              <i class=" fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+
           </fieldset>
 
 
 
           <fieldset class="form-fieldset">
-            <legend class="form-legend">Other Information:</legend>
+            <legend class="form-legend">Contact Information:</legend>
+            <!-- email - as <input> of type 'email' -->
+            <div class="form-control">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="soph23@hotmail.com">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <!-- contact no 1 - as <input> of type 'tel' -->
+            <div class="form-control">
+              <label for="contact-no-1">Contact No 1:</label>
+              <input type="tel" id="contact-no-1" name="contact-no-1" placeholder="+94123456789">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <!-- Contact no 2 - as <input> of type 'tel' -->
+            <div class="form-control">
+              <label for="contact-no-2">Contact No 2:</label>
+              <input type="tel" id="contact-no-2" name="contact-no-2" placeholder="+94123456789">
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <!-- address - as <textarea> -->
+            <div class="form-control">
+              <label for="address" class="textarea-label">Address: </label>
+              <textarea type="text" id="address" name="address"
+                placeholder="Highway Road, Makumbura, Kottawa"></textarea>
 
-            <div class="form-control">
-              <label for="first-line">First line: </label>
-              <input type="text" id="first-line" name="first-line">
               <i class="fas fa-check-circle"></i>
               <i class="fas fa-exclamation-circle"></i>
               <small>Error message</small>
             </div>
-            <div class="form-control">
-              <label for="second-line">Second line:</label>
-              <input type="text" id="second-line" name="second-line">
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>Error message</small>
-            </div>
-            <div class="form-control">
-              <label for="third-line">Third line:</label>
-              <input type="text" id="third-line" name="third-line">
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>Error message</small>
-            </div>
-            <div class="form-control">
-              <label for="forth-line">Forth line:</label>
-              <input type="text" id="forth-line" name="forth-line">
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>Error message</small>
-            </div>
+
+
 
           </fieldset>
 
