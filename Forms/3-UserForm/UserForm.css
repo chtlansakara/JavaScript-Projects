@@ -29,6 +29,43 @@ body
   overflow: hidden;
 }
 
+
+@media screen and (max-width: 600px)
+{
+
+  /* Styles for screens smaller or equal to - a maximum width of 600px */
+  .app-container
+  {
+    width: 500px;
+  }
+
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px)
+{
+
+  /* Styles for screens between 601px and 1024px wide */
+  .app-container
+  {
+    width: 600px;
+  }
+
+
+}
+
+@media screen and (min-width: 1025px)
+{
+
+  /* Styles for screens larger or equal to - a minimum width of 1025px */
+  .app-container
+  {
+    width: 700px;
+  }
+
+
+}
+
 .form-header
 {
   background-color: rgba(225, 225, 225, 0.2);
