@@ -12,7 +12,7 @@ body
 
 .page-container
 {
-  background: linear-gradient(to right, rgb(10, 37, 10), black);
+  background: linear-gradient(to bottom right, rgba(10, 37, 10, 0.9), rgba(0, 0, 0, 0.9));
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -22,7 +22,7 @@ body
 .app-container
 {
   background-color: rgb(255, 255, 255);
-  width: 500px;
+  /* width: 500px; */
   border-radius: 8px;
   margin: 16px 0;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
