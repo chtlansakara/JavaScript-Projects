@@ -180,7 +180,15 @@
 
     <script>
       //get calculation from storage if present or otherwise empty string is set
-      let calculation = JSON.parse(localStorage.getItem('cal-results')) || '';
+
+      let calculation = '';
+      try {
+        const stored = JSON.parse(localStorage.getItem('cal-results'));
+        calculation = stored !== null ? JSON.parse(stored) : '';
+      } catch (e) {
+        localStorage.removeItem('cal-results');
+        calculation = '';
+      }
       console.log(calculation);
       const displayElement = document.querySelector('.display-box');
       displayElement.innerHTML = calculation;
@@ -194,7 +202,18 @@
       }
 
       function calculate() {
-        calculation = eval(calculation);
+        //when nothing to calculate
+        if (calculation.trim() === '') return;
+
+        //catch errors
+        try {
+          calculation = eval(calculation);
+        } catch (e) {
+          displayElement.innerHTML = 'Error';
+          calculation = '';
+          return;
+        }
+
         displayElement.innerHTML = calculation;
         console.log(calculation);
         //saving to storage
@@ -252,6 +271,7 @@
           press(9);
         }
         if (pressedKey === '.') {
+          56
           press('.');
         }
 
@@ -263,7 +283,7 @@
           press(' - ');
         }
         if (pressedKey === '*') {
-          press(' / ');
+          press(' * ');
         }
         if (pressedKey === '/') {
           press(' / ');
